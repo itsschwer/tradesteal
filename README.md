@@ -11,7 +11,7 @@ A small datapack implementing the ability to merge trades between villagers.
 ### Available
 
 #### `clean` 
-Resets scoreboard variables (`arrayLength`, `targetIndex`, `currentIndex`) and removes contents `WorkingPrimary` and `WorkingSecondary` from storage `svm_store`.
+Resets scoreboard variables (`arrayLength`, `targetIndex`, `currentIndex`) for objective `svm_score`; removes contents `WorkingPrimary` and `WorkingSecondary` from storage `svm_store`.
 
 Also run internally when successfully merging trades.
 
