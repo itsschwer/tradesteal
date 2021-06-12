@@ -14,3 +14,7 @@ execute as @e[limit=1,sort=nearest,distance=..5,type=villager,tag=!svm_primary,t
 # Summon particles around tagged villagers for visualisation
 execute at @e[type=villager,tag=svm_primary,limit=1,sort=nearest,distance=0.5..1] run particle minecraft:end_rod ~ ~1 ~ 0 0 0 0.025 1 normal
 execute at @e[type=villager,tag=svm_secondary,limit=1,sort=nearest,distance=..5] run particle minecraft:soul ~ ~1 ~ 0 0 0 0.025 1 normal
+
+
+# Operate check (valid structure, non-empty blast furnace input slots, non-zero offers)
+execute if block ~ ~ ~ minecraft:crying_obsidian if block ~-1 ~ ~ minecraft:blast_furnace{CustomName: '{"text":"Take [1-10]"}'} if data block ~-1 ~ ~ Items[0].Count if block ~1 ~ ~ minecraft:blast_furnace{CustomName: '{"text":"Replace [1-8]"}'} if data block ~1 ~ ~ Items[0].Count if data entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=svm_primary] ActiveEffects if data entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=svm_primary] Offers if data entity @e[limit=1,sort=nearest,distance=..5,type=villager,tag=svm_secondary] Offers run function schwer_villager_merge:operate

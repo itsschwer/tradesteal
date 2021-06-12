@@ -44,8 +44,11 @@ function schwer_villager_merge:counter_cycle_array_loop
 data modify entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=svm_primary] Offers.Recipes set from storage schwer:svm_store WorkingArray
 
 
-# Set the primary villager's level to 6 to prevent unlocking new trades. 
+# Set the primary villager's level to 6 to prevent unlocking new trades
 data modify entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=svm_primary] VillagerData.level set value 6
+
+# Remove the primary villager's active effects (since this is used to trigger a trade steal)
+effect clear @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=svm_primary]
 
 # Kill donor villager and play effects
 execute at @e[limit=1,sort=nearest,distance=..5,type=villager,tag=svm_secondary] run particle minecraft:soul ~ ~1 ~ 0 0 0 0.1 100 normal
