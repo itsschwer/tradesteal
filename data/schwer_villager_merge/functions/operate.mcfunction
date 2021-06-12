@@ -43,5 +43,7 @@ function schwer_villager_merge:counter_cycle_array_loop
 # Merge finished modification with primary villager
 data modify entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=svm_primary] Offers.Recipes set from storage schwer:svm_store WorkingArray
 
+# Set the primary villager's level to 6 to prevent unlocking new trades. 
+data modify entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=svm_primary] VillagerData.level set value 6
 
 function schwer_villager_merge:clean
