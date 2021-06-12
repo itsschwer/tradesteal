@@ -1,14 +1,6 @@
 # Debug call while `operate` is yet to be hooked up:
 # execute as @e[type=minecraft:area_effect_cloud] at @s run function schwer_villager_merge:operate
 
-# Temp
-# execute if block ~-1 ~-1 ~ minecraft:blast_furnace{CustomName: '{"text":"Take [1-10]"}'} store result storage schwer:sts_store TakeCount byte 1.0 run data get block ~-1 ~-1 ~ Items[0].Count
-# execute unless block ~-1 ~-1 ~ minecraft:blast_furnace{CustomName: '{"text":"Take [1-10]"}'} run say 'Take [1-10]' not found
-
-# execute if block ~1 ~-1 ~ minecraft:blast_furnace{CustomName: '{"text":"Replace [1-8]"}'} store result storage schwer:sts_store ReplaceCount byte 1.0 run data get block ~1 ~-1 ~ Items[0].Count
-# execute unless block ~1 ~-1 ~ minecraft:blast_furnace{CustomName: '{"text":"Replace [1-8]"}'} run say 'Replace [1-8]' not found
-
-
 # Extract desired take offer
 # Copy secondary villager offers into storage array for working
 data modify storage schwer:sts_store WorkingArray set from entity @e[limit=1,sort=nearest,distance=..5,type=villager,tag=sts_secondary] Offers.Recipes
