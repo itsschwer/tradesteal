@@ -1,2 +1,2 @@
-function schwer_villager_merge:tick
+function tradesteal:tick
 scoreboard objectives add sts_score dummy

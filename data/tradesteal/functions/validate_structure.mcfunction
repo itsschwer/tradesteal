@@ -18,4 +18,4 @@ execute as @s[tag=sts_rejected] run tellraw @a[distance=..5] ["",{"text":"["},{"
 
 
 # Validation success
-execute unless entity @e[type=minecraft:area_effect_cloud,tag=sts_anchor,distance=..1] run execute if block ~ ~-1 ~ minecraft:crying_obsidian run execute if block ~-1 ~-1 ~ minecraft:blast_furnace{CustomName: '{"text":"Steal"}'} run execute if block ~1 ~-1 ~ minecraft:blast_furnace{CustomName: '{"text":"Replace"}'} run function schwer_villager_merge:setup_structure
+execute unless entity @e[type=minecraft:area_effect_cloud,tag=sts_anchor,distance=..1] run execute if block ~ ~-1 ~ minecraft:crying_obsidian run execute if block ~-1 ~-1 ~ minecraft:blast_furnace{CustomName: '{"text":"Steal"}'} run execute if block ~1 ~-1 ~ minecraft:blast_furnace{CustomName: '{"text":"Replace"}'} run function tradesteal:setup_structure

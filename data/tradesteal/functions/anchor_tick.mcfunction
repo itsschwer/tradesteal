@@ -1,4 +1,4 @@
-execute unless block ~ ~ ~ minecraft:crying_obsidian run function schwer_villager_merge:anchor_broken
+execute unless block ~ ~ ~ minecraft:crying_obsidian run function tradesteal:anchor_broken
 
 particle minecraft:enchant ~ ~2 ~ .1 .1 .1 1 1
 
@@ -17,4 +17,4 @@ execute at @e[type=villager,tag=sts_donor,limit=1,sort=nearest,distance=..5] run
 
 
 # Operate check (valid structure, non-empty blast furnace input slots, non-zero offers)
-execute if block ~ ~ ~ minecraft:crying_obsidian if block ~-1 ~ ~ minecraft:blast_furnace{CustomName: '{"text":"Steal"}'} if data block ~-1 ~ ~ Items[0].Count if block ~1 ~ ~ minecraft:blast_furnace{CustomName: '{"text":"Replace"}'} if data block ~1 ~ ~ Items[0].Count if data entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=sts_recipient] ActiveEffects if data entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=sts_recipient] Offers if data entity @e[limit=1,sort=nearest,distance=..5,type=villager,tag=sts_donor] Offers run function schwer_villager_merge:operate
+execute if block ~ ~ ~ minecraft:crying_obsidian if block ~-1 ~ ~ minecraft:blast_furnace{CustomName: '{"text":"Steal"}'} if data block ~-1 ~ ~ Items[0].Count if block ~1 ~ ~ minecraft:blast_furnace{CustomName: '{"text":"Replace"}'} if data block ~1 ~ ~ Items[0].Count if data entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=sts_recipient] ActiveEffects if data entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=sts_recipient] Offers if data entity @e[limit=1,sort=nearest,distance=..5,type=villager,tag=sts_donor] Offers run function tradesteal:operate

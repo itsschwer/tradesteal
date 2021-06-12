@@ -1,5 +1,5 @@
 # Debug call while `operate` is yet to be hooked up:
-# execute as @e[type=minecraft:area_effect_cloud] at @s run function schwer_villager_merge:operate
+# execute as @e[type=minecraft:area_effect_cloud] at @s run function tradesteal:operate
 
 # Extract desired steal offer
 # Copy donor villager offers into storage array for working
@@ -9,7 +9,7 @@ data modify storage schwer:sts_store WorkingArray set from entity @e[limit=1,sor
 execute store result score arrayLength sts_score run data get storage schwer:sts_store WorkingArray
 execute store result score targetIndex sts_score run data get block ~-1 ~ ~ Items[0].Count
 scoreboard players set currentIndex sts_score 1
-function schwer_villager_merge:cycle_array_loop
+function tradesteal:cycle_array_loop
 
 # Copy desired steal offer from slot 0 to storage
 data modify storage schwer:sts_store OfferCopy set from storage schwer:sts_store WorkingArray[0]
@@ -23,14 +23,14 @@ data modify storage schwer:sts_store WorkingArray set from entity @e[limit=1,sor
 execute store result score arrayLength sts_score run data get storage schwer:sts_store WorkingArray
 execute store result score targetIndex sts_score run data get block ~1 ~ ~ Items[0].Count
 scoreboard players set currentIndex sts_score 1
-function schwer_villager_merge:cycle_array_loop
+function tradesteal:cycle_array_loop
 
 # Copy take offer to replace offer
 data modify storage schwer:sts_store WorkingArray[0] set from storage schwer:sts_store OfferCopy
 
 # Counter-cycle `WorkingArray` to return to desired offer ordering
 scoreboard players set targetIndex sts_score 1
-function schwer_villager_merge:counter_cycle_array_loop
+function tradesteal:counter_cycle_array_loop
 
 # Merge finished modification with recipient villager
 data modify entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=sts_recipient] Offers.Recipes set from storage schwer:sts_store WorkingArray
@@ -52,4 +52,4 @@ playsound minecraft:block.respawn_anchor.deplete master @a ~ ~ ~
 playsound minecraft:block.conduit.deactivate master @a ~ ~ ~
 
 
-function schwer_villager_merge:clean
+function tradesteal:clean
