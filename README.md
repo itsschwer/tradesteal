@@ -43,9 +43,10 @@ For example, 6 items in the *Steal* Blast Furnace and 2 items in the *Replace* B
 ### Available
 
 #### `clean` 
-Resets scoreboard variables (`arrayLength`, `targetIndex`, `currentIndex`) for objective `sts_score`; removes contents `WorkingPrimary` and `WorkingSecondary` from storage `sts_store`.
+- Resets scoreboard variables (`arrayLength`, `targetIndex`, `currentIndex`) for objective `sts_score`
+- Removes contents `WorkingArray` and `OfferCopy` from storage `sts_store`.
 
-Also run internally when successfully merging trades.
+Also run internally when a trade steal is successful.
 
 #### `clear`
 Removes the presence of this datapack by:
@@ -53,7 +54,7 @@ Removes the presence of this datapack by:
 - Running `clean`
 - Removing the `sts_score` scoreboard objective
 - Killing all anchors
-- Removing `sts_primary` and `sts_secondary` tags from villagers
+- Removing `sts_recipient` and `sts_donor` tags from villagers
 
 ### Internal
 
@@ -63,7 +64,7 @@ Called from `anchor_tick` when the corresponding Crying Obsidian is broken.
 Handles removing the presence of the relevant anchor.
 
 #### `anchor_tick`
-The update loop for each anchor. Handles finding the primary and secondary villagers for trade merging, checking if the anchor should be destroyed, and initiating trade merges.
+The update loop for each anchor. Handles finding the recipient and donor villagers for trade merging, checking if the anchor should be destroyed, and initiating trade merges.
 
 #### `counter_cycle_array_loop`
 Used by `operate` to handle trade merging logic.
