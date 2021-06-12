@@ -4,9 +4,37 @@ A small datapack implementing the ability to merge trades between villagers.
 
 ## Intention
 
-## Usage
+This datapack aims to provide a balanced, survival-friendly way of creating partially-custom villagers by merging existing trades between villagers.
+
+The required materials is intended to help balance the feature, as well as the requirement that the villager the trade is being taken from is killed in the process.
+
+## Guide
+- Install into a save like any other datapack.
+- Open the advancement menu to the *Schwer* tab to view the intended hint.
+
+## Mechanics
+
+### Anchor
+
+Requires a structure consisting of (from east to west):
+- A Blast Furnace named *Replace*
+- A block of Crying Obisidian
+- A Blast Furnace named *Steal*
+
+Anchors are activated by dropping a Nether Star named *Offering* on top of the block of Crying Obsidian. This action will also provide feedback on the validity of the structure.
+
+### Trade Stealing
+
+A villager on top of the Crying Obsidian is tagged as being the recipient of stolen trades *(indicated by end rod particles)*.
+
+The next closest villager within 5 blocks of the anchor is the trade donor *(indicated by soul particles)*. This villager is killed upon a successful trade steal.
+
+To operate, place a number of items in the input slots of each Blast Furnace corresponding to the desired trade offer slots. For example, 6 items in the *Steal* Blast Furnace and 2 items in the *Replace* Blast Furnace will replace the second trade of the recipient villager with the sixth trade from the donor villager. If the number of items placed in a Blast Furnace is greater than the number of trades offered by the corresponding villager, then trade stealing will operate using the last trade slot offered by that villager. 
 
 ## Functions
+*Split between 'Available' (i.e. fine to call using `/function`) and 'Internal' (not intended to be called by `/function`).*
+
+*Ordered alphabetically.*
 
 ### Available
 

@@ -1,9 +1,7 @@
 # Debug call while `operate` is yet to be hooked up:
 # execute as @e[type=minecraft:area_effect_cloud] at @s run function schwer_villager_merge:operate
 
-# data get block 196 99 -200 Items[0].Count
-# data modify entity ca8ba902-27b7-4603-8d81-9da467e738c0 Offers.Recipes[0] merge from entity 743d2a2c-daab-4aa9-81df-b5085f957b31 Offers.Recipes[2]
-
+# Temp
 # execute if block ~-1 ~-1 ~ minecraft:blast_furnace{CustomName: '{"text":"Take [1-10]"}'} store result storage schwer:svm_store TakeCount byte 1.0 run data get block ~-1 ~-1 ~ Items[0].Count
 # execute unless block ~-1 ~-1 ~ minecraft:blast_furnace{CustomName: '{"text":"Take [1-10]"}'} run say 'Take [1-10]' not found
 
