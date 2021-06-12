@@ -31,6 +31,8 @@ The next closest villager within 5 blocks of the anchor is the trade donor *(ind
 
 To operate, place a number of items in the input slots of each Blast Furnace corresponding to the desired trade offer slots. For example, 6 items in the *Steal* Blast Furnace and 2 items in the *Replace* Blast Furnace will replace the second trade of the recipient villager with the sixth trade from the donor villager. If the number of items placed in a Blast Furnace is greater than the number of trades offered by the corresponding villager, then trade stealing will operate using the last trade slot offered by that villager. 
 
+Once a villager receives a trade, they can no longer unlock new trades.
+
 ## Functions
 *Split between 'Available' (i.e. fine to call using `/function`) and 'Internal' (not intended to be called by `/function`).*
 
@@ -74,6 +76,7 @@ Sets up this datapack by adding the `svm_score` scoreboard objective and startin
 Called through Minecraft's *`load.json`*.
 
 #### `operate`
+Refer to [**Trade Stealing**](#trade-stealing) or `operate.mcfunction`.
 
 #### `setup_structure`
 Handles the creation of an anchor and consuming an *Offering*.
