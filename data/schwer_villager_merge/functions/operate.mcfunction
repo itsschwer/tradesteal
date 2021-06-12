@@ -53,8 +53,8 @@ particle minecraft:end_rod ~ ~2 ~ 0 0 0 0.25 100 normal
 
 kill @e[limit=1,sort=nearest,distance=..5,type=villager,tag=svm_secondary]
 
-playsound minecraft:block.respawn_anchor.deplete master @a[distance=..5] ~ ~ ~
-playsound minecraft:block.conduit.deactivate master @a[distance=..5] ~ ~ ~
+playsound minecraft:block.respawn_anchor.deplete master @a ~ ~ ~
+playsound minecraft:block.conduit.deactivate master @a ~ ~ ~
 
 
 function schwer_villager_merge:clean
