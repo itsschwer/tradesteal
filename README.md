@@ -48,7 +48,12 @@ Resets scoreboard variables (`arrayLength`, `targetIndex`, `currentIndex`) for o
 Also run internally when successfully merging trades.
 
 #### `clear`
-Removes the presence of this datapack by clearing the scheduled `tick` function, running `clean`, and removing the `svm_score` scoreboard objective.
+Removes the presence of this datapack by:
+- Clearing the scheduled `tick` function
+- Running `clean`
+- Removing the `svm_score` scoreboard objective
+- Killing all anchors
+- Removing `svm_primary` and `svm_secondary` tags from villagers
 
 ### Internal
 
