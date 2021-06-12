@@ -29,9 +29,11 @@ A villager on top of the Crying Obsidian is tagged as being the recipient of sto
 
 The next closest villager within 5 blocks of the anchor is the trade donor *(indicated by soul particles)*. This villager is killed upon a successful trade steal.
 
-To operate, place a number of items in the input slots of each Blast Furnace corresponding to the desired trade offer slots. For example, 6 items in the *Steal* Blast Furnace and 2 items in the *Replace* Blast Furnace will replace the second trade of the recipient villager with the sixth trade from the donor villager. If the number of items placed in a Blast Furnace is greater than the number of trades offered by the corresponding villager, then trade stealing will operate using the last trade slot offered by that villager. 
+To operate, place a number of items in the input slots of each Blast Furnace corresponding to the desired trade offer slots. Then apply a potion effect to the recipient villager *(e.g. via splash potion)*.
 
 Once a villager receives a trade, they can no longer unlock new trades.
+
+For example, 6 items in the *Steal* Blast Furnace and 2 items in the *Replace* Blast Furnace will replace the second trade of the recipient villager with the sixth trade from the donor villager. If the number of items placed in a Blast Furnace is greater than the number of trades offered by the corresponding villager, then trade stealing will operate using the last trade slot offered by that villager.
 
 ## Functions
 *Split between 'Available' (i.e. fine to call using `/function`) and 'Internal' (not intended to be called by `/function`).*
