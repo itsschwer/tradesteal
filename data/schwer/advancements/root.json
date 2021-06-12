@@ -1,0 +1,19 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:golden_carrot",
+			"nbt": "{Enchantments:[{}]}"
+		},
+		"title": "Schwer",
+		"frame": "challenge",
+		"description": ["",{"text":"Your guide to my datapacks","color":"#C77AFF"}],
+		"background": "minecraft:textures/block/quartz_block_bottom.png",
+		"show_toast": false,
+		"announce_to_chat": false
+	},
+	"criteria": {
+		"tick": {
+			"trigger": "minecraft:tick"
+		}
+	}
+}
