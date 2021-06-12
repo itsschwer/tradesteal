@@ -18,4 +18,4 @@ execute as @s[tag=svm_rejected] run tellraw @a[distance=..5] ["",{"text":"["},{"
 
 
 # Validation success
-execute unless entity @e[type=minecraft:area_effect_cloud,tag=svm_anchor,distance=..1] run execute if block ~ ~-1 ~ minecraft:crying_obsidian run execute if block ~-1 ~-1 ~ minecraft:blast_furnace{CustomName: '{"text":"Take [1-10]"}'} run execute if block ~1 ~-1 ~ minecraft:blast_furnace{CustomName: '{"text":"Replace [1-8]"}'} run function schwer_villager_merge:validate_structure_success
+execute unless entity @e[type=minecraft:area_effect_cloud,tag=svm_anchor,distance=..1] run execute if block ~ ~-1 ~ minecraft:crying_obsidian run execute if block ~-1 ~-1 ~ minecraft:blast_furnace{CustomName: '{"text":"Take [1-10]"}'} run execute if block ~1 ~-1 ~ minecraft:blast_furnace{CustomName: '{"text":"Replace [1-8]"}'} run function schwer_villager_merge:setup_structure
