@@ -100,3 +100,16 @@ Initialises from `load`.
 Checks the area around a dropped Nether Star named *Offering* to determine if a valid anchor can be summoned.
 
 Run from `tick` when a single (i.e. non-stacked) *Offering* lands on the ground.
+
+## References
+*(Roughly in personal use order)*
+- [Vanilla Tweaks — Thunder Shrine (v1.1.0)](https://vanillatweaks.net/picker/datapacks/)
+    - *Used roughly to set up the structure mechanic.*
+- [Minecraft Wiki — Commands](https://minecraft.fandom.com/wiki/Commands)
+    - *Used heavily throughout datapack.*
+- [SirBenet — Teleport entities relatively to the center of a block](https://gaming.stackexchange.com/questions/207273/teleport-entities-relatively-to-the-center-of-a-block)
+    - *Used to center anchors.*
+- [Cloud Wolf — NBT Arrays in Minecraft [1.14+]](https://www.youtube.com/watch?v=Bt6xD8vE7Pw)
+    - *Introduced the array cycling method to dynamically extract values.*
+- [Fabian Röling — /data modify and NBT paths](https://gaming.stackexchange.com/questions/351488/would-someone-give-a-thorough-explanation-of-1-14-minecrafts-data-modify)
+    - *Didn't read it all but it helped point me in the right direction.*
