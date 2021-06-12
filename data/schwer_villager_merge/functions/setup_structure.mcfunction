@@ -1,4 +1,4 @@
-tellraw @a[distance=..5] ["",{"text":"["},{"text":"itsschwer","color":"#C77AFF"},{"text":"] "},{"text":"Offering","color":"yellow"},{"text":" accepted","color":"green"}]
+tellraw @a[distance=..5] ["",{"text":"["},{"text":"Tradesteal","color":"#C77AFF"},{"text":"] "},{"text":"Offering","color":"yellow"},{"text":" accepted","color":"green"}]
 
 # Align to block center using item_frame
 # https://gaming.stackexchange.com/questions/207273/teleport-entities-relatively-to-the-center-of-a-block
