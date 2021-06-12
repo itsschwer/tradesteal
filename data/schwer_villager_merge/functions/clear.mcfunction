@@ -1,3 +1,3 @@
 schedule clear schwer_villager_merge:tick
-schwer_villager_merge:clean
+function schwer_villager_merge:clean
 scoreboard objectives remove svm_score
