@@ -43,7 +43,7 @@ For example, 6 items in the *Steal* Blast Furnace and 2 items in the *Replace* B
 ### Available
 
 #### `clean` 
-Resets scoreboard variables (`arrayLength`, `targetIndex`, `currentIndex`) for objective `svm_score`; removes contents `WorkingPrimary` and `WorkingSecondary` from storage `svm_store`.
+Resets scoreboard variables (`arrayLength`, `targetIndex`, `currentIndex`) for objective `sts_score`; removes contents `WorkingPrimary` and `WorkingSecondary` from storage `sts_store`.
 
 Also run internally when successfully merging trades.
 
@@ -51,9 +51,9 @@ Also run internally when successfully merging trades.
 Removes the presence of this datapack by:
 - Clearing the scheduled `tick` function
 - Running `clean`
-- Removing the `svm_score` scoreboard objective
+- Removing the `sts_score` scoreboard objective
 - Killing all anchors
-- Removing `svm_primary` and `svm_secondary` tags from villagers
+- Removing `sts_primary` and `sts_secondary` tags from villagers
 
 ### Internal
 
@@ -78,7 +78,7 @@ Used by `operate` to handle trade merging logic.
 Used by `operate` to handle trade merging logic.
 
 #### `load`
-Sets up this datapack by adding the `svm_score` scoreboard objective and starting the `tick` loop.
+Sets up this datapack by adding the `sts_score` scoreboard objective and starting the `tick` loop.
 
 Called through Minecraft's *`load.json`*.
 

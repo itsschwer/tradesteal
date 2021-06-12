@@ -1,2 +1,2 @@
 function schwer_villager_merge:tick
-scoreboard objectives add svm_score dummy
+scoreboard objectives add sts_score dummy
