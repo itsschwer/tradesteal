@@ -11,11 +11,11 @@
 data modify storage schwer:svm_store WorkingPrimary set from entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=svm_primary] Offers.Recipes
 data modify storage schwer:svm_store WorkingSecondary set from entity @e[limit=1,sort=nearest,distance=..5,type=villager,tag=svm_secondary] Offers.Recipes
 
-# Cycle primary villager offers
-execute store result score targetIndex svm_score run data get block ~1 ~ ~ Items[0].Count
-execute store result score arrayLength svm_score run data get storage schwer:svm_store WorkingPrimary
+# Cycle desired take offer to slot 0
+execute store result score targetIndex svm_score run data get block ~-1 ~ ~ Items[0].Count
+execute store result score arrayLength svm_score run data get storage schwer:svm_store WorkingSecondary
 scoreboard players set currentIndex svm_score 1
-function schwer_villager_merge:cycle_primary_loop
+function schwer_villager_merge:cycle_secondary_loop
 
 # Merge finished modification with primary villager
-data modify entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=svm_primary] Offers.Recipes[0] set from storage schwer:svm_store WorkingPrimary[0]
+data modify entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=svm_primary] Offers.Recipes[0] set from storage schwer:svm_store WorkingSecondary[0]
