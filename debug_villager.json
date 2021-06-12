@@ -1,0 +1,33 @@
+/summon villager ~ ~-2.5 ~ {VillagerData: {level: 6,profession: "minecraft:farmer",type: "minecraft:plains"
+    },Offers: {Recipes: [
+            {maxUses: 1,buy: {id: "minecraft:golden_carrot",Count: 1b
+                },sell: {id: "golden_carrot",Count: 1b
+                }
+            },
+            {maxUses: 1,buy: {id: "minecraft:golden_carrot",Count: 1b
+                },sell: {id: "golden_carrot",Count: 2b
+                }
+            },
+            {maxUses: 1,buy: {id: "minecraft:golden_carrot",Count: 1b
+                },sell: {id: "golden_carrot",Count: 3b
+                }
+            },
+            {maxUses: 1,buy: {id: "minecraft:golden_carrot",Count: 1b
+                },sell: {id: "golden_carrot",Count: 4b
+                }
+            },
+            {maxUses: 1,buy: {id: "minecraft:golden_carrot",Count: 1b
+                },sell: {id: "golden_carrot",Count: 5b
+                }
+            },
+            {maxUses: 1,buy: {id: "minecraft:golden_carrot",Count: 1b
+                },sell: {id: "golden_carrot",Count: 6b
+                }
+            },
+            {maxUses: 1,buy: {id: "minecraft:golden_carrot",Count: 1b
+                },sell: {id: "golden_carrot",Count: 7b
+                }
+            }
+        ]
+    }
+}
