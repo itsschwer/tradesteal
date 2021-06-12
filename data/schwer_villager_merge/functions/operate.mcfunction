@@ -32,3 +32,6 @@ function schwer_villager_merge:cycle_primary_counter_loop
 
 # Merge finished modification with primary villager
 data modify entity @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=svm_primary] Offers.Recipes set from storage schwer:svm_store WorkingPrimary
+
+
+function schwer_villager_merge:clean
