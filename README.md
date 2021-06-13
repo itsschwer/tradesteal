@@ -9,6 +9,7 @@ This datapack aims to provide a balanced, survival-friendly way of creating part
 The required materials is intended to help balance the feature, as well as the requirement that the villager the trade is being taken from is killed in the process.
 
 ## Guide
+- [Download the code (this repository) as a `.zip`](https://github.com/itsschwer/tradesteal/archive/refs/heads/master.zip)
 - Install into a save like any other datapack.
 - Open the advancement menu to the *Schwer* tab to view the intended hint.
 
