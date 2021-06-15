@@ -6,7 +6,12 @@ A small datapack implementing the ability to merge trades between villagers.
 
 This datapack aims to provide a balanced, survival-friendly way of creating partially-custom villagers by merging existing trades between villagers.
 
-The required materials is intended to help balance the feature, as well as the requirement that the villager the trade is being taken from is killed in the process.
+The main feature of this is the ability to reduce duplicate trades across villagers by compacting actually desired trades into less villagers *(e.g. merging an Enchanted Book trade onto a librarian to replace a Book and Quill trade)*.
+
+### Balancing
+The feature is balanced by the materials required to enable trade stealing *(see [Mechanics § Anchor](#anchor))* and the requirement that the donor villager is killed in the process *(see [Mechanics § Trade Stealing](#trade-stealing))*.
+
+Minor balancing elements include: preventing a recipient villager from unlocking new trades (*∴ players need to max out the level of the villager before trading to maximise the number of available slots*); and requiring a splash potion or tipped arrow for each trade steal *(again, see [Mechanics § Trade Stealing](#trade-stealing) for full details)*.
 
 ## Guide
 - Download:
