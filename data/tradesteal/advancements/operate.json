@@ -1,0 +1,17 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:splash_potion"
+		},
+		"title": "A Worthy Sacrifice",
+		"description": ["",{"text":"Apply a potion effect to a recipient villager and steal a trade from a donor villager","color":"#C77AFF"}],
+		"show_toast": true,
+		"announce_to_chat": true
+	},
+	"parent": "tradesteal:tradesteal",
+	"criteria": {
+		"command": {
+			"trigger": "minecraft:impossible"
+		}
+	}
+}

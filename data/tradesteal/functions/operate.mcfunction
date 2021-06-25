@@ -51,5 +51,8 @@ kill @e[limit=1,sort=nearest,distance=..5,type=villager,tag=sts_donor]
 playsound minecraft:block.respawn_anchor.deplete master @a ~ ~ ~
 playsound minecraft:block.conduit.deactivate master @a ~ ~ ~
 
+# Give advancement to nearby players
+advancement grant @a[distance=..5] only tradesteal:operate
+
 
 function tradesteal:clean
