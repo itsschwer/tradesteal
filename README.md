@@ -14,11 +14,13 @@ The feature is balanced by the materials required to enable trade stealing *(see
 Minor balancing elements include: preventing a recipient villager from unlocking new trades (*∴ players need to max out the level of the villager before trading to maximise the number of available slots*); and requiring a splash potion or tipped arrow for each trade steal *(again, see [Mechanics § Trade Stealing](#trade-stealing) for full details)*.
 
 ## Guide
-- Download:
+*This datapack was developed in 1.16.5 (`"pack_format": 6`) but should be compatible with versions using an equivalent or greater `pack_format`, barring major changes to commands/datapacks.*
+
+1. Download:
     - [Repository as a `.zip`](https://github.com/itsschwer/tradesteal/archive/refs/heads/master.zip) *(Code > Download ZIP)*
     - [Release](https://github.com/itsschwer/tradesteal/releases) *(will need to unzip before installing into a save)*
-- Install into a save like any other datapack.
-- Open the advancement menu to the *Schwer* tab to view the intended hint.
+2. Install into a save like any other datapack.
+3. Open the advancement menu to the *Schwer* tab to view the intended hints.
 
 ## Mechanics
 
@@ -63,6 +65,8 @@ Removes the presence of this datapack by:
 - Removing the `sts_score` scoreboard objective
 - Killing all anchors
 - Removing `sts_recipient` and `sts_donor` tags from villagers
+
+*Note that since it is possible that unloaded chunks contain anchors and tagged villagers, this can't guarantee to completely remove the presence of this datapack (i.e. some villagers may remain tagged and some marker area effect clouds may still exist).*
 
 ### Internal
 
