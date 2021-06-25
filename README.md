@@ -33,6 +33,8 @@ Requires a structure consisting of (from east to west):
 
 Anchors are activated by dropping a Nether Star named *Offering* on top of the block of Crying Obsidian. This action will also provide feedback on the validity of the structure.
 
+Breaking an Anchor's Crying Obsidian will deactivate the Anchor.
+
 ### Trade Stealing
 
 A villager on top of the Crying Obsidian is tagged as being the recipient of stolen trades *(indicated by end rod particles)*.
@@ -54,7 +56,7 @@ Once a villager receives a trade, they can no longer unlock new trades.
 
 #### `clean` 
 - Resets scoreboard variables (`arrayLength`, `targetIndex`, `currentIndex`) for objective `sts_score`
-- Removes contents `WorkingArray` and `OfferCopy` from storage `sts_store`.
+- Removes contents `WorkingArray` and `OfferCopy` from storage `sts_store`
 
 Also run internally when a trade steal is successful.
 
