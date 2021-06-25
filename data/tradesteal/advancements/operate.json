@@ -1,7 +1,8 @@
 {
 	"display": {
 		"icon": {
-			"item": "minecraft:splash_potion"
+			"item": "minecraft:splash_potion",
+			"nbt": "{CustomPotionColor:11862055}"
 		},
 		"title": "A Worthy Sacrifice",
 		"description": ["",{"text":"Apply a potion effect to a recipient villager and steal a trade from a donor villager","color":"#C77AFF"}],
