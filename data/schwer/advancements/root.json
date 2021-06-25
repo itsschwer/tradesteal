@@ -5,8 +5,8 @@
 			"nbt": "{Enchantments:[{}]}"
 		},
 		"title": "Schwer",
-		"frame": "challenge",
-		"description": ["",{"text":"Your guide to my datapacks","color":"#C77AFF"}],
+		"frame": "goal",
+		"description": ["",{"text":"Here to guide you","color":"#C77AFF"}],
 		"background": "minecraft:textures/block/quartz_block_bottom.png",
 		"show_toast": false,
 		"announce_to_chat": false
