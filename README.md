@@ -104,7 +104,7 @@ Sets up this datapack by adding the `sts_score` scoreboard objective and startin
 Called through Minecraft's *`load.json`*.
 
 #### `operate`
-Refer to [**Trade Stealing**](#trade-stealing) or `operate.mcfunction`.
+Refer to *[Mechanics § Trade Stealing](#trade-stealing)* or `operate.mcfunction`.
 
 #### `setup_structure`
 Handles the creation of an anchor and consuming an *Offering*, as well as granting an advancement to the player responsible (if applicable).
