@@ -9,7 +9,7 @@
 		"show_toast": true,
 		"announce_to_chat": true
 	},
-	"parent": "tradesteal:tradesteal",
+	"parent": "tradesteal:anchor",
 	"criteria": {
 		"command": {
 			"trigger": "minecraft:impossible"

@@ -15,6 +15,11 @@ execute at @s run playsound minecraft:block.beacon.power_select master @a ~ ~ ~
 # Summon anchor; offset to block y-center
 execute at @s run summon area_effect_cloud ~ ~-0.46875 ~ {Duration:2147000000,Tags:["sts_anchor"],Radius:0.01,Particle:"minecraft:underwater"}
 
+# Advancement logic
+data modify storage schwer:sts_store Thrower set from entity @s Thrower
+execute as @a run function tradesteal:grant_advancement
+# Clean up
+data remove storage schwer:sks_store Thrower
 
 # Kill offering
 kill @s[type=item]

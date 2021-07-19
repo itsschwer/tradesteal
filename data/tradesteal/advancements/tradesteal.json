@@ -1,11 +1,12 @@
 {
 	"display": {
 		"icon": {
-			"item": "minecraft:nether_star"
+			"item": "minecraft:emerald",
+			"nbt": "{Enchantments:[{}]}"
 		},
 		"title": "Tradesteal",
 		"frame": "goal",
-		"description": ["",{"text":"Drop a ","color":"#C77AFF"},{"text":"Nether Star","color":"yellow"},{"text":" named ","color":"#C77AFF"},{"text":"Offering","color":"yellow","italic":true},{"text":" to uncover the secrets of trade stealing","color":"#C77AFF"}],
+		"description": ["",{"text":"Merge trades between villagers to create partially-custom villagers","color":"#C77AFF"}],
 		"show_toast": false,
 		"announce_to_chat": false
 	},
