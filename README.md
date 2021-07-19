@@ -93,6 +93,11 @@ Used by `operate` to handle trade merging logic.
 #### `cycle_array`
 Used by `operate` to handle trade merging logic.
 
+#### `grant_advancement`
+Handles the logic for granting an advancement to the player who dropped the *Offering* in creating an anchor.
+
+Run from `setup_structure`.
+
 #### `load`
 Sets up this datapack by adding the `sts_score` scoreboard objective and starting the `tick` loop.
 
@@ -102,7 +107,7 @@ Called through Minecraft's *`load.json`*.
 Refer to [**Trade Stealing**](#trade-stealing) or `operate.mcfunction`.
 
 #### `setup_structure`
-Handles the creation of an anchor and consuming an *Offering*.
+Handles the creation of an anchor and consuming an *Offering*, as well as granting an advancement to the player responsible (if applicable).
 
 Run when `validate_structure` succeeds.
 
