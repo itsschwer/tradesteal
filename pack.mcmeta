@@ -1,6 +1,6 @@
 {
     "pack": {
         "pack_format": 6,
-        "description": "Balanced, survival-friendly, partially-custom villagers"
+        "description": "Merge trades between villagers to create partially-custom villagers"
     }
 }
