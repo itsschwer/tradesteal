@@ -6,7 +6,7 @@
 		},
 		"title": "Tradesteal",
 		"frame": "goal",
-		"description": ["",{"text":"Merge trades between villagers to create partially-custom villagers","color":"#C77AFF"}],
+		"description": ["",{"text":"Merge trades between villagers","color":"#C77AFF"}],
 		"show_toast": false,
 		"announce_to_chat": false
 	},
