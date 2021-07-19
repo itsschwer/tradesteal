@@ -4,7 +4,7 @@
 			"item": "minecraft:nether_star"
 		},
 		"title": "And So It Begins",
-		"description": ["",{"text":"Drop a ","color":"#C77AFF"},{"text":"Nether Star","color":"yellow"},{"text":" named ","color":"#C77AFF"},{"text":"Offering","color":"yellow","italic":true},{"text":" to uncover the secrets of trade stealing","color":"#C77AFF"}],
+		"description": ["",{"text":"Create an anchor by dropping a ","color":"#C77AFF"},{"text":"Nether Star","color":"yellow"},{"text":" named ","color":"#C77AFF"},{"text":"Offering","color":"yellow","italic":true},{"text":" on the ground","color":"#C77AFF"}],
 		"show_toast": true,
 		"announce_to_chat": true
 	},
