@@ -133,3 +133,5 @@ Run from `tick` when a single (i.e. non-stacked) *Offering* lands on the ground.
     - *Introduced the array cycling method to dynamically extract values.*
 - [Fabian Röling — /data modify and NBT paths](https://gaming.stackexchange.com/questions/351488/would-someone-give-a-thorough-explanation-of-1-14-minecrafts-data-modify)
     - *Didn't read it all but it helped point me in the right direction.*
+- [gateways](https://github.com/itsschwer/gateways) *\[and [kitsune](https://github.com/itsschwer/kitsune)\]*
+    - *Granting advancement to player who dropped a specific item*
