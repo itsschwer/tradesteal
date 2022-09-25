@@ -1,0 +1,25 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:paper"
+		},
+		"title": "A Dangerous Game",
+		"description": ["",{"text":"Hold ","color":"#C77AFF"},{"text":"Paper","color":"yellow"},{"text":" named ","color":"#C77AFF"},{"text":"Replace","color":"yellow","italic":true},{"text":" in your main hand and ","color":"#C77AFF"},{"text":"Paper","color":"yellow"},{"text":" named ","color":"#C77AFF"},{"text":"Steal","color":"yellow","italic":true},{"text":" in your off-hand","color":"#C77AFF"}],
+		"show_toast": true,
+		"announce_to_chat": true
+	},
+	"parent": "tradesteal:tradesteal",
+	"criteria": {
+		"hold": {
+			"trigger": "minecraft:tick",
+			"conditions": {
+				"player": [
+					{
+						"condition": "minecraft:reference",
+						"name": "tradesteal:valid_player"
+					}
+				]
+			}
+		}
+	}
+}
