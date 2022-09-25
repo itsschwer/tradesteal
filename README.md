@@ -10,8 +10,8 @@ This datapack aims to provide a survival-friendly way of creating partially-cust
 The main objective of this is the ability to reduce the number of villagers that need to be kept by replacing unwanted trades with desired ones *(e.g. merging an Enchanted Book trade onto a librarian to replace a Book and Quill trade)*.
 
 ### Balancing
-This primarily aims to be a quality-of-life feature, however, some minor balancing considerations were made:
-- the donor villager is killed in the process *(see [Mechanics § Trade Stealing](#trade-stealing))*.
+This datapack primarily aims to provide a quality-of-life feature, however, some minor balancing considerations were made:
+- the donor villager is killed in the process *(see [Mechanics](#mechanics))*.
 - the recipient villager becomes unable to unlock new trades
     - *∴ players need to max out the level of the villager before trade stealing in order to maximise the number of available slots*
 
@@ -103,15 +103,11 @@ The update loop for each player. Handles finding the recipient and donor village
 
 ## References
 *(Roughly in personal use order)*
-- [Vanilla Tweaks — Thunder Shrine (v1.1.0)](https://vanillatweaks.net/picker/datapacks/)
-    - *Used roughly to set up the structure mechanic.*
 - [Minecraft Wiki — Commands](https://minecraft.fandom.com/wiki/Commands)
     - *Used heavily throughout datapack.*
-- [SirBenet — Teleport entities relatively to the center of a block](https://gaming.stackexchange.com/questions/207273/teleport-entities-relatively-to-the-center-of-a-block)
-    - *Used to center anchors.*
 - [Cloud Wolf — NBT Arrays in Minecraft [1.14+]](https://www.youtube.com/watch?v=Bt6xD8vE7Pw)
     - *Introduced the array cycling method to dynamically extract values.*
 - [Fabian Röling — /data modify and NBT paths](https://gaming.stackexchange.com/questions/351488/would-someone-give-a-thorough-explanation-of-1-14-minecrafts-data-modify)
     - *Didn't read it all but it helped point me in the right direction.*
-- [gateways](https://github.com/itsschwer/gateways) *\[and [kitsune](https://github.com/itsschwer/kitsune)\]*
-    - *Granting advancement to player who dropped a specific item*
+- [Misode's Data Pack Generators](https://misode.github.io/)
+    - *Generating predicates*
