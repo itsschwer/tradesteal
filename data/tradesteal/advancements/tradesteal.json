@@ -6,7 +6,7 @@
 		},
 		"title": "Tradesteal",
 		"frame": "goal",
-		"description": ["",{"text":"Merge trades between Villagers","color":"#C77AFF"},{"text":"\nv1.2.3","color":"blue","italic":true}],
+		"description": ["",{"text":"Merge trades between Villagers","color":"#C77AFF"},{"text":"\nv2.0.0","color":"blue","italic":true}],
 		"show_toast": false,
 		"announce_to_chat": false
 	},
