@@ -38,9 +38,6 @@ data modify entity @e[limit=1,sort=nearest,distance=..5,type=villager,tag=sts_re
 # Set the recipient villager's level to 6 to prevent unlocking new trades
 data modify entity @e[limit=1,sort=nearest,distance=..5,type=villager,tag=sts_recipient] VillagerData.level set value 6
 
-# Remove the recipient villager's active effects (since this is used to trigger a trade steal)
-effect clear @e[limit=1,sort=nearest,distance=0.5..1,type=villager,tag=sts_recipient]
-
 # Kill donor villager and play effects
 execute at @e[limit=1,sort=nearest,distance=..5,type=villager,tag=sts_donor] run particle minecraft:soul ~ ~1 ~ 0 0 0 0.1 100 normal
 particle minecraft:end_rod ~ ~2 ~ 0 0 0 0.25 100 normal
@@ -53,5 +50,5 @@ playsound minecraft:block.conduit.deactivate master @a ~ ~ ~
 # Grant advancement
 advancement grant @s only tradesteal:operate
 
-
+execute as @a[predicate=extinguish:valid_target] run function tradesteal:_trade
 function tradesteal:clean
