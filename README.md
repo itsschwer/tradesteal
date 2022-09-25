@@ -5,14 +5,15 @@ A small datapack implementing the ability to merge trades between villagers.
 
 ## Intention
 
-This datapack aims to provide a balanced, survival-friendly way of creating partially-custom villagers by merging existing trades between villagers.
+This datapack aims to provide a survival-friendly way of creating partially-custom villagers by merging existing trades between villagers.
 
-The main feature of this is the ability to reduce duplicate trades across villagers by compacting actually desired trades into less villagers *(e.g. merging an Enchanted Book trade onto a librarian to replace a Book and Quill trade)*.
+The main objective of this is the ability to reduce the number of villagers that need to be kept by replacing unwanted trades with desired ones *(e.g. merging an Enchanted Book trade onto a librarian to replace a Book and Quill trade)*.
 
 ### Balancing
-The feature is balanced by the materials required to enable trade stealing *(see [Mechanics § Anchor](#anchor))* and the requirement that the donor villager is killed in the process *(see [Mechanics § Trade Stealing](#trade-stealing))*.
-
-Minor balancing elements include: preventing a recipient villager from unlocking new trades (*∴ players need to max out the level of the villager before trading to maximise the number of available slots*); and requiring a splash potion or tipped arrow for each trade steal *(again, see [Mechanics § Trade Stealing](#trade-stealing) for full details)*.
+This primarily aims to be a quality-of-life feature, however, some minor balancing considerations were made:
+- the donor villager is killed in the process *(see [Mechanics § Trade Stealing](#trade-stealing))*.
+- the recipient villager becomes unable to unlock new trades
+    - *∴ players need to max out the level of the villager before trade stealing in order to maximise the number of available slots*
 
 ## Guide
 *This datapack was developed in 1.16.5 (`"pack_format": 6`) but should be compatible with versions using an equivalent or greater `pack_format`, barring major changes to commands/datapacks.*
@@ -25,28 +26,28 @@ Minor balancing elements include: preventing a recipient villager from unlocking
 
 ## Mechanics
 
-### Anchor
+### Initiation
+To initiate a trade steal, a player must hold:
+- Paper named *Replace* in their main hand
+- Paper named *Steal* in their off-hand
 
-Requires a structure consisting of (from east to west):
-- A Blast Furnace named *Replace*
-- A block of Crying Obisidian
-- A Blast Furnace named *Steal*
+The amount of Paper each hand determines which trade slot is stolen from the donor and replaced in the recipient.
 
-Anchors are activated by dropping a Nether Star named *Offering* on top of the block of Crying Obsidian. This action will also provide feedback on the validity of the structure.
+If the amount of Paper held for either villager exceeds the number of trades offered by that villager, then trade stealing will operate using the last trade slot offered by that villager.
 
-Breaking an Anchor's Crying Obsidian will deactivate the Anchor.
+### Selection
 
-### Trade Stealing
+The closest villager within 5 blocks of the player is marked as the recipient *(indicated by end rod particles)*. The next closest is marked as the donor *(indicated by soul particles)*.
 
-A villager on top of the Crying Obsidian is tagged as being the recipient of stolen trades *(indicated by end rod particles)*.
+Measures should be taken to prevent villagers from wandering, in order to ensure the correct villagers are used in the process
 
-The next closest villager within 5 blocks of the anchor is the trade donor *(indicated by soul particles)*. This villager is killed upon a successful trade steal.
-
-To operate, place a number of items in the input slots of each Blast Furnace corresponding to the desired trade offer slots. Then apply a potion effect to the recipient villager *(e.g. via splash potion)*.
-
-For example, 6 items in the *Steal* Blast Furnace and 2 items in the *Replace* Blast Furnace will replace the second trade of the recipient villager with the sixth trade from the donor villager. If the number of items placed in a Blast Furnace is greater than the number of trades offered by the corresponding villager, then trade stealing will operate using the last trade slot offered by that villager.
+### Execution
+To execute a trade steal, ensure the amount of Paper held in each hand is correct, then complete a trade with the recipient villager. If successful, the donor villager will die and the recipient villager will have the *Replace* slot replaced with the trade from the donor's *Steal* slot.
 
 Once a villager receives a trade, they can no longer unlock new trades.
+
+### *Example*
+A Player holding 6 *Steal* Paper in their off-hand and 2 *Replace* Paper in their main hand will replace the second trade of the recipient villager with the sixth trade from the donor villager.
 
 ## Functions
 *Split between 'Available' (i.e. fine to call using `/function`) and 'Internal' (not intended to be called by `/function`).*
@@ -66,20 +67,11 @@ Removes the presence of this datapack by:
 - Clearing the scheduled `tick` function
 - Running `clean`
 - Removing the `sts_score` scoreboard objective
-- Killing all anchors
 - Removing `sts_recipient` and `sts_donor` tags from villagers
 
-*Note that since it is possible that unloaded chunks contain anchors and tagged villagers, this can't guarantee to completely remove the presence of this datapack (i.e. some villagers may remain tagged and some marker area effect clouds may still exist).*
+*Note that since it is possible that unloaded chunks contain tagged villagers, this can't guarantee to completely remove the presence of this datapack (i.e. some villagers may remain tagged).*
 
 ### Internal
-
-#### `anchor_broken`
-Called from `anchor_tick` when the corresponding Crying Obsidian is broken.
-
-Handles removing the presence of the relevant anchor.
-
-#### `anchor_tick`
-The update loop for each anchor. Handles finding the recipient and donor villagers for trade merging, checking if the anchor should be destroyed, and initiating trade merges.
 
 #### `counter_cycle_array_loop`
 Used by `operate` to handle trade merging logic.
@@ -93,33 +85,21 @@ Used by `operate` to handle trade merging logic.
 #### `cycle_array`
 Used by `operate` to handle trade merging logic.
 
-#### `grant_advancement`
-Handles the logic for granting an advancement to the player who dropped the *Offering* in creating an anchor.
-
-Run from `setup_structure`.
-
 #### `load`
 Sets up this datapack by adding the `sts_score` scoreboard objective and starting the `tick` loop.
 
 Called through Minecraft's *`load.json`*.
 
 #### `operate`
-Refer to *[Mechanics § Trade Stealing](#trade-stealing)* or `operate.mcfunction`.
-
-#### `setup_structure`
-Handles the creation of an anchor and consuming an *Offering*, as well as granting an advancement to the player responsible (if applicable).
-
-Run when `validate_structure` succeeds.
+Refer to *[Mechanics](#mechanics)* or `operate.mcfunction`.
 
 #### `tick`
-The main update loop. Handles the creation of anchors, as well as the anchor update loop.
+The main update loop. Executes `tick_player` for each valid player and handles villager particle effects.
 
 Initialises from `load`.
 
-#### `validate_structure`
-Checks the area around a dropped Nether Star named *Offering* to determine if a valid anchor can be summoned.
-
-Run from `tick` when a single (i.e. non-stacked) *Offering* lands on the ground.
+#### `tick_player`
+The update loop for each player. Handles finding the recipient and donor villagers for trade merging  and initiating trade merges.
 
 ## References
 *(Roughly in personal use order)*
