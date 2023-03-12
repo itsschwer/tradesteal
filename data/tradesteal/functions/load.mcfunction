@@ -1,2 +1,2 @@
 function tradesteal:tick
-scoreboard objectives add sts_score dummy
+scoreboard objectives add tradesteal dummy

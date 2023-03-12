@@ -4,7 +4,6 @@
 A small datapack implementing the ability to merge trades between villagers.
 
 ## Intention
-
 This datapack aims to provide a survival-friendly way of creating partially-custom villagers by merging existing trades between villagers.
 
 The main objective of this is the ability to reduce the number of villagers that need to be kept by replacing unwanted trades with desired ones *(e.g. merging an Enchanted Book trade onto a librarian to replace a Book and Quill trade)*.
@@ -36,7 +35,6 @@ The amount of Paper each hand determines which trade slot is stolen from the don
 If the amount of Paper held for either villager exceeds the number of trades offered by that villager, then trade stealing will operate using the last trade slot offered by that villager.
 
 ### Selection
-
 The closest villager within 5 blocks of the player is marked as the recipient *(indicated by end rod particles)*. The next closest is marked as the donor *(indicated by soul particles)*.
 
 Measures should be taken to prevent villagers from wandering, in order to ensure the correct villagers are used in the process
@@ -49,57 +47,24 @@ Once a villager receives a trade, they can no longer unlock new trades.
 ### *Example*
 A Player holding 6 *Steal* Paper in their off-hand and 2 *Replace* Paper in their main hand will replace the second trade of the recipient villager with the sixth trade from the donor villager.
 
-## Functions
-*Split between 'Available' (i.e. fine to call using `/function`) and 'Internal' (not intended to be called by `/function`).*
+## Data
 
-*Ordered alphabetically.*
+### Command Storage
+This datapack uses the namespace `schwer:tradesteal` (paths `WorkingArray` and `OfferCopy`) temporarily during `execute`. The contents of this storage is removed at the end of `execute`.
 
-### Available
+### Scoreboard
+This datapack uses a dummy scoreboard objective, `tradesteal`, as well as three dummy players within this objective as variables (`arrayLength`, `targetIndex`, `currentIndex`).
 
-#### `clean` 
-- Resets scoreboard variables (`arrayLength`, `targetIndex`, `currentIndex`) for objective `sts_score`
-- Removes contents `WorkingArray` and `OfferCopy` from storage `sts_store`
+The objective is generated when the datapack is loaded, whereas the variables are set and reset during a single `execute` function call.
 
-Also run internally when a trade steal is successful.
+### Tags
+This datapack uses `tradesteal_recipient` and `tradesteal_donor` tags on villagers. These tags are set and removed each `tick` call.
 
-#### `clear`
-Removes the presence of this datapack by:
-- Clearing the scheduled `tick` function
-- Running `clean`
-- Removing the `sts_score` scoreboard objective
-- Removing `sts_recipient` and `sts_donor` tags from villagers
+### Removal
+`/function tradesteal:clean` can be run manually should there be any lingering data in the scoreboard or command storage.
 
-*Note that since it is possible that unloaded chunks contain tagged villagers, this can't guarantee to completely remove the presence of this datapack (i.e. some villagers may remain tagged).*
-
-### Internal
-
-#### `counter_cycle_array_loop`
-Used by `operate` to handle trade merging logic.
-
-#### `counter_cycle_array`
-Used by `operate` to handle trade merging logic.
-
-#### `cycle_array_loop`
-Used by `operate` to handle trade merging logic.
-
-#### `cycle_array`
-Used by `operate` to handle trade merging logic.
-
-#### `load`
-Sets up this datapack by adding the `sts_score` scoreboard objective and starting the `tick` loop.
-
-Called through Minecraft's *`load.json`*.
-
-#### `operate`
-Refer to *[Mechanics](#mechanics)* or `operate.mcfunction`.
-
-#### `tick`
-The main update loop. Executes `tick_player` for each valid player and handles villager particle effects.
-
-Initialises from `load`.
-
-#### `tick_player`
-The update loop for each player. Handles finding the recipient and donor villagers for trade merging  and initiating trade merges.
+`/function tradesteal:stop` can be used to remove the `tradesteal` scoreboard objective, as well as clearing the scheduled `tick` function. This disables the datapack until it is reloaded.
+<br/> Additionally, this function will call `tradesteal:clean`, as well as remove any lingering tags from loaded villagers.
 
 ## References
 *(Roughly in personal use order)*
